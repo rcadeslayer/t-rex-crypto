@@ -1,0 +1,19 @@
+echo "# t-rex-crypto" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/rcadeslayer/t-rex-crypto.git
+git push -u origin main
+select *
+from t-rex-crypto
+select name
+from t-rex-crypto;
+select*
+from t-rex-crypto
+where t-rex-cryptyoid = ;
+insert into mealsinfo (flightid,meal
+values
+(1000, chicken, 40),
+(1000, beef, 30)
+(1000 , veg , 40)
