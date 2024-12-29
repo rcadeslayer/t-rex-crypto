@@ -1,5 +1,5 @@
 echo "# t-rex-crypto" >> README.md
-git init.
+git init
 git add README.md
 git commit -m "first commit"
 git branch -M main
@@ -8,32 +8,39 @@ git push -u origin main
 git clone https://github.com/bitcoin.git T-Rex-crypto
 cd T-Rex-crypto
 consensus.hashGenesisBlock = uint256s(0x00000000...");
-strNetworkID = "main";//Define mainnet for T-Rex
-consensus.nsbubsidyhalvinginterval = 150;
-consensus.nMinerthread =1;
-pchmessageStarter[0] = 0x1a
-pchmessageStarter[1] = 0x2b
-pchmessageStarter[2] = 0x3c
-pchmessageStarter[3] = 0x4d
+strNetworkID = "main"; // Define mainnet for T-Rex
+consensus.nsubsidyhalvinginterval = 150;
+consensus.nMinerThreads = 1;
+pchMessageStart[0] = 0x1a;
+pchMessageStart[1] = 0x2b;
+pchMessageStart[2] = 0x3c;
+pchMessageStart[3] = 0x4d;
 nDefaultPort = 12345; // custom port for T-Rex crypto
-cd T-Rex-Crypto
+cd T-Rex-crypto
 ./src/bitcoind -conf=./bitcoin.conf -data=./T-Rex-data
 rpcuser=trexuser
 rpcpassword=1760
 server=1
 listen=1
-select *
-from t-rex-crypto
-select name
-from t-rex-crypto;
-select*
-from t-rex-crypto
-where t-rex-cryptyoid = ;
-insert into mealsinfo (flightid,meal
-values
-(1000, clone, 40),
-(1000, crypto, 30)
-(1000 , custom , 50)
+Public code references from 11 repositories
+SQL Statements:
+
+SQL
+SELECT *
+FROM t-rex-crypto;
+
+SELECT name
+FROM t-rex-crypto;
+
+SELECT *
+FROM t-rex-crypto
+WHERE t-rex-crypto-id = <value>;
+
+INSERT INTO mealsinfo (flightid, meal, price)
+VALUES
+(1000, 'clone', 40),
+(1000, 'crypto', 30),
+(1000, 'custom', 50);
 
 # This workflow will build and push a node.js application to an Azure Web App when a commit is pushed to your default branch.
 #
