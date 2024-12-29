@@ -22,26 +22,6 @@ rpcuser=trexuser
 rpcpassword=1760
 server=1
 listen=1
-Public code references from 11 repositories
-SQL Statements:
-
-SQL
-SELECT *
-FROM t-rex-crypto;
-
-SELECT name
-FROM t-rex-crypto;
-
-SELECT *
-FROM t-rex-crypto
-WHERE t-rex-crypto-id = <value>;
-
-INSERT INTO mealsinfo (flightid, meal, price)
-VALUES
-(1000, 'clone', 40),
-(1000, 'crypto', 30),
-(1000, 'custom', 50);
-
 # This workflow will build and push a node.js application to an Azure Web App when a commit is pushed to your default branch.
 #
 # This workflow assumes you have already created the target Azure App Service web app.
@@ -87,7 +67,7 @@ jobs:
         cache: 'npm'
 
     - name: npm install, build, and test
-      run: 
+      run: |
         npm install
         npm run build --if-present
         npm run test --if-present
@@ -110,3 +90,6 @@ jobs:
     steps:
     - name: Download artifact from build job
       uses: actions/download-artifact@v3
+      with:
+        name: node-app
+        path: .
