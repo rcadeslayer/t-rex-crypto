@@ -1,10 +1,27 @@
 echo "# t-rex-crypto" >> README.md
-git init
+git init.
 git add README.md
 git commit -m "first commit"
 git branch -M main
 git remote add origin https://github.com/rcadeslayer/t-rex-crypto.git
 git push -u origin main
+git clone https://github.com/bitcoin.git T-Rex-crypto
+cd T-Rex-crypto
+consensus.hashGenesisBlock = uint256s(0x00000000...");
+strNetworkID = "main";//Define mainnet for T-Rex
+consensus.nsbubsidyhalvinginterval = 150;
+consensus.nMinerthread =1;
+pchmessageStarter[0] = 0x1a
+pchmessageStarter[1] = 0x2b
+pchmessageStarter[2] = 0x3c
+pchmessageStarter[3] = 0x4d
+nDefaultPort = 12345; // custom port for T-Rex crypto
+cd T-Rex-Crypto
+./src/bitcoind -conf=./bitcoin.conf -data=./T-Rex-data
+rpcuser=trexuser
+rpcpassword=1760
+server=1
+listen=1
 select *
 from t-rex-crypto
 select name
