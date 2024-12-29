@@ -1,0 +1,182 @@
+echo "# t-rex-crypto" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/rcadeslayer/t-rex-crypto.git
+git push -u origin main
+git clone https://github.com/bitcoin.git T-Rex-crypto
+cd T-Rex-crypto
+consensus.hashGenesisBlock = uint256s(0x00000000...");
+strNetworkID = "main"; // Define mainnet for T-Rex
+consensus.nsubsidyhalvinginterval = 150;
+consensus.nMinerThreads = 1;
+pchMessageStart[0] = 0x1a;
+pchMessageStart[1] = 0x2b;
+pchMessageStart[2] = 0x3c;
+pchMessageStart[3] = 0x4d;
+nDefaultPort = 12345; // custom port for T-Rex crypto
+cd T-Rex-crypto
+./src/bitcoind -conf=./bitcoin.conf -data=./T-Rex-data
+rpcuser=trexuser
+rpcpassword=1760
+server=1
+listen=1
+SELECT *
+FROM t-rex-crypto;
+
+SELECT name
+FROM t-rex-crypto;
+
+SELECT *
+FROM t-rex-crypto
+WHERE t-rex-crypto-id = <value>;
+
+INSERT INTO mealsinfo (flightid, meal, price)
+VALUES
+(1000, 'clone', 40),
+(1000, 'crypto', 30),
+(1000, 'custom', 50);
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+env:
+  AZURE_WEBAPP_NAME: your-app-name    # set this to your application's name
+  AZURE_WEBAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
+  NODE_VERSION: '20.x'                # set this to the node version to use
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+        cache: 'npm'
+
+    - name: npm install, build, and test
+      run: |
+        npm install
+        npm run build --if-present
+        npm run test --if-present
+
+    - name: Upload artifact for deployment job
+      uses: actions/upload-artifact@v3
+      with:
+        name: node-app
+        path: .
+
+  deploy:
+    permissions:
+      contents: none
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: 'Development'
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+
+    steps:
+    - name: Download artifact from build job
+      uses: actions/download-artifact@v3
+      with:
+        name: node-app
+        path: .
+echo "# t-rex-crypto" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/rcadeslayer/t-rex-crypto.git
+git push -u origin main
+git clone https://github.com/bitcoin.git T-Rex-crypto
+cd T-Rex-crypto
+consensus.hashGenesisBlock = uint256s(0x00000000...");
+strNetworkID = "main"; // Define mainnet for T-Rex
+consensus.nsubsidyhalvinginterval = 150;
+consensus.nMinerThreads = 1;
+pchMessageStart[0] = 0x1a;
+pchMessageStart[1] = 0x2b;
+pchMessageStart[2] = 0x3c;
+pchMessageStart[3] = 0x4d;
+nDefaultPort = 12345; // custom port for T-Rex crypto
+cd T-Rex-crypto
+./src/bitcoind -conf=./bitcoin.conf -data=./T-Rex-data
+rpcuser=trexuser
+rpcpassword=1760
+server=1
+listen=1
+SELECT *
+FROM t-rex-crypto;
+
+SELECT name
+FROM t-rex-crypto;
+
+SELECT *
+FROM t-rex-crypto
+WHERE t-rex-crypto-id = <value>;
+
+INSERT INTO mealsinfo (flightid, meal, price)
+VALUES
+(1000, 'clone', 40),
+(1000, 'crypto', 30),
+(1000, 'custom', 50);
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+env:
+  AZURE_WEBAPP_NAME: your-app-name    # set this to your application's name
+  AZURE_WEBAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
+  NODE_VERSION: '20.x'                # set this to the node version to use
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+        cache: 'npm'
+
+    - name: npm install, build, and test
+      run: |
+        npm install
+        npm run build --if-present
+        npm run test --if-present
+
+    - name: Upload artifact for deployment job
+      uses: actions/upload-artifact@v3
+      with:
+        name: node-app
+        path: .
+
+  deploy:
+    permissions:
+      contents: none
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: 'Development'
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+
+    steps:
+    - name: Download artifact from build job
+      uses: actions/download-artifact@v3
+      with:
+        name: node-app
+        path: .
